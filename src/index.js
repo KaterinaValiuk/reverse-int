@@ -1,16 +1,19 @@
 /*jshint esversion: 8 */
 
 module.exports = function reverse (n) {
-    const a = (Math.abs(n)).toString();
-    let result =  '';
-    let char = 0;
-    const isNegative = n < 0;
+  let number = 0;
+    if (n >= 0) {
+      number = n;
+    } else {
+      number = Math.abs(n);
+    }
+
+    let myArray = Array.from(number.toString());
+   
+    let reverseArray = myArray.reverse();
+    let result = reverseArray.join('');
+    let resultNum = Number(result);
     
-    for (let i = 0; i < a.length; i++) {
-      let char = a[i];}
-      if (char !== '0') {result = char + result;}
-      else if (char === '0' && a[i + 1] && a[i + 1] !== '0') {res = char + result;}
-    
-      return Number(isNegative ? result * -1 : result);
-  }
+    return resultNum;
+  };
 
